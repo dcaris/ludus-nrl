@@ -2,7 +2,7 @@ const osmosis = require("osmosis");
 const { Team } = require('../model/team');
 const program = require('commander');
 
-function getTeams(competition, callback) {
+const getTeams = (competition, callback) => {
     var teams = [];
     osmosis
         .get('https://www.nrl.com/clubs/')
@@ -14,7 +14,7 @@ function getTeams(competition, callback) {
             let team = new Team(json.name.replace('\r\n', ' '));
             teams.push(team);
         })
-        .done(() => teams.forEach((team) => console.log('%s', team.fullname)));
+        .done(() => callback(teams));
 }
 
 exports.command = () => {
@@ -23,6 +23,6 @@ exports.command = () => {
         .alias('t')
         .description('List different Rugby League teams for the competition')
         .action(() => {
-            getTeams('');
+            getTeams('', (teams) => teams.forEach((team) => console.log('%s', team.fullname)));
         })
 }

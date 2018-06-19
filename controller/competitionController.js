@@ -2,7 +2,7 @@ const osmosis = require("osmosis");
 const { competition } = require('../model/competition');
 const program = require('commander');
 
-function getCompetitions() {
+const getCompetitions = () => {
     competition.forEach(((type) => {
         console.log('%s: %s', type.code, type.name)
     }));
