@@ -1,18 +1,24 @@
 {
-  "name": "ludos-nrl",
-  "version": "1.0.0",
-  "description": "CLI app to scrape www.nrl.com round and player stats",
-  "main": "index.js",
-  "author": "Daniel Caris",
-  "license": "MIT",
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "clear": "^0.1.0",
-    "clui": "^0.3.6",
-    "commander": "^2.15.1",
-    "configstore": "^3.1.2",
-    "figlet": "^1.2.0",
-    "inquirer": "^6.0.0",
-    "minimist": "^1.2.0"
-  }
+    "name": "ludos-nrl",
+    "version": "1.0.0",
+    "description": "CLI app to scrape www.nrl.com round and player stats",
+    "author": "Daniel Caris",
+    "license": "MIT",
+    "scripts": {},
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "clear": "^0.1.0",
+        "clui": "^0.3.6",
+        "commander": "^2.15.1",
+        "configstore": "^3.1.2",
+        "figlet": "^1.2.0",
+        "glob": "^7.1.2",
+        "inquirer": "^6.0.0",
+        "minimist": "^1.2.0",
+        "osmosis": "^1.1.6",
+        "path": "^0.12.7"
+    },
+    "devDependencies": {
+        "nodemon": "^1.17.5"
+    }
 }
