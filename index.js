@@ -7,9 +7,6 @@ const program = require('commander');
 const glob = require('glob');
 const path = require('path');
 
-// Clear terminal
-//clear();
-
 // Log header
 //console.log(chalk.default.yellow(figlet.textSync('Ludus - NRL', { horizontalLayout: 'full' })));
 
