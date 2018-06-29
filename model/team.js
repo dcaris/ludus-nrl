@@ -9,4 +9,4 @@ class Team {
     }
 }
 
-exports.Team = Team;
+module.exports = Team;

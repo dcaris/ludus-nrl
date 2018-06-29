@@ -1,10 +1,12 @@
 const program = require('commander');
-const competition = require('../competitions/competition');
+const competition = require('../model/competition');
 const columnify = require('columnify');
 
 const getCompetitions = () => {
     var competitions = competition.getAllCompetitions();
-    console.log(columnify(competitions));
+    console.log(columnify(competitions, {
+        columns: ['code', 'name', 'location']
+    }));
 };
 
 exports.command = () => program

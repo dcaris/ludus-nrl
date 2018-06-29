@@ -1,4 +1,4 @@
-const competition = require('./competition');
+const competition = require('../competition');
 
 class qrl extends competition {
     constructor() {
