@@ -1,18 +1,13 @@
-const competition = require('../model/competition');
-const program = require('commander');
+const competition = require('../lib/model/competition');
+const columnify = require('columnify');
 
-const getTeams = (competitionCode) => {
-    if (!competitionCode) throw "No competition provided";
+const commands = {
+    getTeams(competitionCode) {
+        var comp = competition.getCompetition(competitionCode);
+        if (!comp) throw `Unable to locate competition ${competitionCode}`;
 
-    var comp = competition.getCompetition(competitionCode);
-    if (!comp) throw `Unable to locate competition ${competitionCode}`;
-
-    comp.getTeams(teams => teams.forEach((team) => console.log('%s', team.fullname)));
+        comp.getTeams(teams => console.log(columnify(teams)));
+    }
 };
 
-exports.command = () => {
-    program
-        .command('teams <competition>')
-        .description('List different Rugby League teams for the competition')
-        .action(competition => getTeams(competition));
-};
+module.exports = commands;

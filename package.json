@@ -1,9 +1,12 @@
 {
     "name": "ludos-nrl",
     "version": "1.0.0",
-    "description": "CLI app to scrape www.nrl.com round and player stats",
+    "description": "CLI app to scrape rugby league round and player stats (multiple sources)",
     "author": "Daniel Caris",
     "license": "MIT",
+    "bin": {
+        "ludus-rl": "./bin/ludus-rl.js"
+    },
     "scripts": {},
     "dependencies": {
         "chalk": "^2.4.1",
@@ -17,7 +20,8 @@
         "inquirer": "^6.0.0",
         "minimist": "^1.2.0",
         "osmosis": "^1.1.6",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "update-notifier": "^2.5.0"
     },
     "devDependencies": {
         "nodemon": "^1.17.5"
