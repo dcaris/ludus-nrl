@@ -9,7 +9,9 @@
     },
     "scripts": {},
     "dependencies": {
+        "axios": "^0.18.0",
         "chalk": "^2.4.1",
+        "cheerio": "^1.0.0-rc.2",
         "clear": "^0.1.0",
         "clui": "^0.3.6",
         "columnify": "^1.5.4",
@@ -24,6 +26,8 @@
         "update-notifier": "^2.5.0"
     },
     "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/cheerio": "^0.22.8",
         "nodemon": "^1.17.5"
     }
 }
