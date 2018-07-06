@@ -1,0 +1,22 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug List Team Command",
+      "program": "${workspaceFolder}/bin/ludus-rl-team.js",
+      "args": ["list", "nrl"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug List Competition Command",
+      "program": "${workspaceFolder}/bin/ludus-rl-competition.js",
+      "args": ["list"]
+    }
+  ]
+}
