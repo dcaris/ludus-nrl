@@ -75,9 +75,9 @@ describe('the competition module', () => {
 
                     // Validate home and away team details
                     expect(g.homeTeam, 'Home Team').is.not.null();
-                    expect(g.homeTeam.clubNickName, 'Home Team Name').is.not.empty();
+                    expect(g.homeTeam.club.nickname, 'Home Team Name').is.not.empty();
                     expect(g.awayTeam, 'Away Team').is.not.null();
-                    expect(g.awayTeam.clubNickName, 'Away Team Name').is.not.empty();
+                    expect(g.awayTeam.club.nickname, 'Away Team Name').is.not.empty();
 
                     // Validate home and away team score
                     expect(g.homeTeam.score, 'Home Team Score').is.gte(0);
