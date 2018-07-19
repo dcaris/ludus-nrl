@@ -65,10 +65,12 @@ describe('the competition module', () => {
                     expect(g.date.getFullYear()).eql(rounds[0].year);
 
                     expect(g.homeTeam).is.not.null();
+                    expect(g.homeTeam.nickname).is.not.empty();
                     expect(g.homeTeam.players).is.not.empty();
                     expect(g.homeTeamScore).is.gte(0);
 
                     expect(g.awayTeam).is.not.null();
+                    expect(g.awayTeam.nickname).is.not.empty();
                     expect(g.awayTeam.players).is.not.empty();
                     expect(g.awayTeamScore).is.gte(0);
                 });
