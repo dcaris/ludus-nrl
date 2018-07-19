@@ -70,6 +70,8 @@ describe('the competition module', () => {
                     expect(g.date, 'Match Date').is.not.null();
                     expect(g.date, 'Match Date').is.not.NaN();
                     expect(g.date.getFullYear(), 'Match Date Year').eql(rounds[0].year);
+                    expect(g.date.getHours(), 'Match Game Time').is.gt(0);
+                    expect(g.venue, "Match Venue").is.not.empty();
 
                     // Validate home and away team details
                     expect(g.homeTeam, 'Home Team').is.not.null();
