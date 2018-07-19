@@ -23,6 +23,7 @@
         "glob": "^7.1.2",
         "inquirer": "^6.0.0",
         "minimist": "^1.2.0",
+        "moment": "^2.22.2",
         "osmosis": "^1.1.6",
         "path": "^0.12.7",
         "update-notifier": "^2.5.0"
