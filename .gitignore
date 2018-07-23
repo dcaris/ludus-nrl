@@ -71,3 +71,8 @@ typings/
 
 # Serverless directories
 .serverless
+test/match_data.json
+test/matches.html
+test/nrl_ouput.json
+test/test.html
+package-lock.json
