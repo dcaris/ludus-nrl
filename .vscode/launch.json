@@ -17,6 +17,20 @@
       "name": "Debug List Competition Command",
       "program": "${workspaceFolder}/bin/ludus-rl-competition.js",
       "args": ["list"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug List Rounds Command",
+      "program": "${workspaceFolder}/bin/ludus-rl-round.js",
+      "args": ["list", "nrl", "-y", "2018"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug List Round Results Command",
+      "program": "${workspaceFolder}/bin/ludus-rl-round.js",
+      "args": ["results", "nrl", "-y", "2018", "-r", "2"]
     }
   ]
 }

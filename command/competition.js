@@ -1,9 +1,9 @@
-const competition = require('../lib/model/competition');
+const ludus = require('../lib/ludus');
 const columnify = require('columnify');
 
 const commands = {
     getCompetitions() {
-        var competitions = competition.getAllCompetitions();
+        var competitions = ludus.competitions();
         console.log(columnify(competitions, {
             columns: ['code', 'name', 'location']
         }));
