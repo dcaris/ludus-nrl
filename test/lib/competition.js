@@ -97,8 +97,8 @@ describe('the competition module', () => {
             expect(p.playerId, 'Away Team - Player Id').is.not.NaN();
             expect(p.position, 'Away Team - Player Position').is.not.empty();
             expect(p.positionNumber, 'Away Team - Player Position Number').is.gt(0);
-            expect(p.matchStats, 'Away Team - Player Match Stats').is.not.null();
-            expect(p.matchStats.minutesPlayed, 'Away Team - Player Match Stats - Mins Played').is.gt(0);
+            // expect(p.stats, 'Away Team - Player Match Stats').is.not.null();
+            // expect(p.stats.minutesPlayed, 'Away Team - Player Match Stats - Mins Played').is.gt(0);
         });
 
         expect(detailedResult.homeTeam.players, 'Home Team Players').is.not.empty();
@@ -108,8 +108,16 @@ describe('the competition module', () => {
             expect(p.playerId, 'Home Team - Player Id').is.not.NaN();
             expect(p.position, 'Home Team - Player Position').is.not.empty();
             expect(p.positionNumber, 'Home Team - Player Position Number').is.gt(0);
-            expect(p.matchStats, 'Home Team - Player Match Stats').is.not.null();
-            expect(p.matchStats.minutesPlayed, 'Home Team - Player Match Stats - Mins Played').is.gt(0);
+            // expect(p.stats, 'Home Team - Player Match Stats').is.not.null();
+            // expect(p.stats.minutesPlayed, 'Home Team - Player Match Stats - Mins Played').is.gt(0);
+        });
+
+        expect(detailedResult.playerStats, 'Players Statistics').is.not.empty();
+        detailedResult.playerStats.forEach(p => {
+            expect(p.player, 'Statistic - Player').is.not.null();
+            expect(p.club, 'Statistic - Player').is.not.null();
+            // expect(p.stats, 'Home Team - Player Match Stats').is.not.null();
+            // expect(p.stats.minutesPlayed, 'Home Team - Player Match Stats - Mins Played').is.gt(0);
         });
     });
 });
