@@ -13,6 +13,7 @@ program
     .action((competition, option) => command.getRounds(competition, option.year));
 program
     .command('results <competition>')
+    .alias('r')
     .description('List all matches by round')
     .option('-r, --round <round>', 'Round number', 1)
     .option('-y, --year <year>', 'The year', new Date().getFullYear())

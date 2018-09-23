@@ -56,7 +56,7 @@ describe('the competition module', () => {
     it('should list all match results per round for a given year', async() => {
         expect(rounds).is.not.empty();
 
-        matches = await nrl.results(rounds[0].year, rounds[0].number);
+        matches = await nrl.results(rounds[rounds.length - 1].year, rounds[rounds.length - 1].number);
         expect(matches).not.empty();
         matches.forEach(g => {
             // Validate match details
@@ -78,48 +78,22 @@ describe('the competition module', () => {
             expect(g.awayTeamScore, 'Away Team Score').is.gte(0);
         });
     });
-    /*
-    it('should list detailed match results per round for a given year', async() => {
+
+    it('should list detailed player statistics for a given match', async() => {
         expect(matches).is.not.empty();
 
-        const detailedResult = await nrl.match(rounds[0].year, rounds[0].number, matches[0].homeTeam.club.nickname, matches[0].awayTeam.club.nickname);
-        expect(detailedResult, 'Match').is.not.null();
-        expect(detailedResult.date, 'Match Date').is.not.null();
-        expect(detailedResult.date, 'Match Date').is.not.NaN();
-        expect(detailedResult.date.getFullYear(), 'Match Date Year').eql(rounds[0].year);
-        expect(detailedResult.date.getHours(), 'Match Game Time').is.gt(0);
-        expect(detailedResult.venue, 'Match Venue').is.not.empty();
-        expect(detailedResult.attendance, 'Match Attendance').is.gt(0);
-
-        expect(detailedResult.awayTeam.players, 'Away Team Players').is.not.empty();
-        detailedResult.awayTeam.players.forEach(p => {
-            expect(p.firstName, 'Away Team - Player Firstname').is.not.empty();
-            expect(p.lastName, 'Away Team - Player Lastname').is.not.empty();
-            expect(p.playerId, 'Away Team - Player Id').is.not.NaN();
-            expect(p.position, 'Away Team - Player Position').is.not.empty();
-            expect(p.positionNumber, 'Away Team - Player Position Number').is.gt(0);
-            // expect(p.stats, 'Away Team - Player Match Stats').is.not.null();
-            // expect(p.stats.minutesPlayed, 'Away Team - Player Match Stats - Mins Played').is.gt(0);
-        });
-
-        expect(detailedResult.homeTeam.players, 'Home Team Players').is.not.empty();
-        detailedResult.homeTeam.players.forEach(p => {
-            expect(p.firstName, 'Home Team - Player Firstname').is.not.empty();
-            expect(p.lastName, 'Home Team - Player Lastname').is.not.empty();
-            expect(p.playerId, 'Home Team - Player Id').is.not.NaN();
-            expect(p.position, 'Home Team - Player Position').is.not.empty();
-            expect(p.positionNumber, 'Home Team - Player Position Number').is.gt(0);
-            // expect(p.stats, 'Home Team - Player Match Stats').is.not.null();
-            // expect(p.stats.minutesPlayed, 'Home Team - Player Match Stats - Mins Played').is.gt(0);
-        });
-
-        expect(detailedResult.playerStats, 'Players Statistics').is.not.empty();
-        detailedResult.playerStats.forEach(p => {
-            expect(p.player, 'Statistic - Player').is.not.null();
-            expect(p.club, 'Statistic - Player').is.not.null();
-            // expect(p.stats, 'Home Team - Player Match Stats').is.not.null();
-            // expect(p.stats.minutesPlayed, 'Home Team - Player Match Stats - Mins Played').is.gt(0);
+        const players = await nrl.matchStatistics(rounds[rounds.length - 1].year,
+            rounds[rounds.length - 1].number,
+            matches[0].homeTeam.nickname,
+            matches[0].awayTeam.nickname);
+        expect(players, 'Players').is.not.empty();
+        players.forEach(p => {
+            expect(p.player.firstName, 'Player Firstname').is.not.empty();
+            expect(p.player.lastName, 'Player Lastname').is.not.empty();
+            expect(p.player.playerId, 'Player Id').is.not.NaN();
+            expect(p.player.position, 'Player Position').is.not.empty();
+            expect(p.player.positionNumber, 'Player Position Number').is.gt(0);
+            expect(p.minutesPlayed, 'Player Match Stats - Mins Played').is.gt(0);
         });
     });
-    */
 });
